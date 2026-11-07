@@ -5,9 +5,9 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   plugins: [
     react(),
+
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico'],
 
       manifest: {
         name: 'SlashMaster AI',
@@ -18,31 +18,18 @@ export default defineConfig({
         display: 'standalone',
         start_url: '/',
 
-        
-       icons: [
-  {
-    src: '/pwa-icon.svg',
-    sizes: 'any',
-    type: 'image/svg+xml',
-    purpose: 'any maskable'
-  }
-]
-          
-         {
-            src: '/pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png'
-          },
+        icons: [
           {
-            src: '/pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'maskable'
+            src: '/pwa-icon.svg',
+            sizes: 'any',
+            type: 'image/svg+xml',
+            purpose: 'any'
           }
         ]
       }
     })
   ],
+
   server: {
     port: 3000,
     open: true
